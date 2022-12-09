@@ -36,6 +36,7 @@ function functions.Build(ObjectType, Coordinates, Orientation)
 	if Orientation == nil then
 		Orientation = 0
 	end
+	wait()
 	game:GetService("ReplicatedStorage").BuildingSystem.Libraries.Grid.AddGridObject:FireServer(ObjectType.."$"..tostring(Orientation).."$0", Coordinates)
 end
 
