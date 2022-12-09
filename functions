@@ -10,6 +10,28 @@ function functions.Grid(startPosition, x, y, z)
 	return positions
 end
 
+function functions.buildEdges(startPosition, x, y, z)
+	local positions = {}
+
+	local c1 = Vector3.new(startPosition.X, y, startPosition.Z)
+	local c2 = Vector3.new(-startPosition.X, y, -startPosition.Z)
+	local c3 = Vector3.new(startPosition.X, y, startPosition.Z)
+	local c4 = Vector3.new(-startPosition.X, y, -startPosition.Z)
+	for i = 1,x do 
+		c1 += Vector3.new(1, 0, 0)
+		table.insert(positions, c1)
+		c2 += Vector3.new(-1, 0, 0)
+		table.insert(positions, c2)
+	end
+	for i = 1,z do 
+		c3 += Vector3.new(0, 0, 1)
+		table.insert(positions, c3)
+		c4 += Vector3.new(0, 0, -1)
+		table.insert(positions, c4)
+	end
+	return positions
+end
+
 function functions.Build(ObjectType, Coordinates, Orientation)
 	if Orientation == nil then
 		Orientation = 0
@@ -18,22 +40,22 @@ function functions.Build(ObjectType, Coordinates, Orientation)
 end
 
 function functions.Destroy(Part)
-			local args = {
-				[1] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Crossbow"),
-				[2] = {
-					["p"] = Vector3.new(-25.773319244384766, 7.850815296173096, 42.5),
-					["pid"] = 1,
-					["part"] = Part,
-					["d"] = 25.67250633239746,
-					["maxDist"] = 25.614667892456055,
-					["h"] = Part,
-					["m"] = Enum.Material.Plastic,
-					["sid"] = 1,
-					["t"] = 0.7112177868872994,
-					["n"] = Vector3.new(0, 0, 1)
-				}
-			}
-			game:GetService("ReplicatedStorage").WeaponsSystem.Network.WeaponHit:FireServer(unpack(args))
-		end
-	
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Crossbow"),
+		[2] = {
+			["p"] = Vector3.new(-25.773319244384766, 7.850815296173096, 42.5),
+			["pid"] = 1,
+			["part"] = Part,
+			["d"] = 25.67250633239746,
+			["maxDist"] = 25.614667892456055,
+			["h"] = Part,
+			["m"] = Enum.Material.Plastic,
+			["sid"] = 1,
+			["t"] = 0.7112177868872994,
+			["n"] = Vector3.new(0, 0, 1)
+		}
+	}
+	game:GetService("ReplicatedStorage").WeaponsSystem.Network.WeaponHit:FireServer(unpack(args))
+end
+
 return functions
