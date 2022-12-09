@@ -10,7 +10,7 @@ function functions.Grid(startPosition, x, y, z)
 	return positions
 end
 
-function buildEdges(startPosition, x, y, z)
+function functions.buildEdges(startPosition, x, y, z)
 	local positions = {}
 
 	local c1 = Vector3.new(startPosition.X - 1, y, startPosition.Z - 1)
