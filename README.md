@@ -1,9 +1,10 @@
 https://www.roblox.com/games/8721702870/unnamed#!/
 ~~~Arabic Fortnite~~~
 
-----------------------SCRIPT EXAMPLES
 
 local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
+
+----------------------SCRIPT EXAMPLES
 
 for i,v in pairs(functions.Grid(Vector3.new(-10,0,-10), 20, 0, 20)) do 
 	wait()
