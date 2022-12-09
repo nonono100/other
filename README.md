@@ -26,4 +26,4 @@ for i,v in pairs(functions.buildEdges(Vector3.new(-10, 0, -10), 20, 0, 20)) do
 	wait()
 	functions.Build("Wall", v[1], v[2])
 end
-------------------
+
