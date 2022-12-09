@@ -13,7 +13,7 @@ end
 
 ------------------
 
-for i,v in pairs(functions.Grid(Vector3.new(-13,0,-13), 26, 0, 26)) do
+for i,v in pairs(functions.Grid(Vector3.new(-10,0,-10), 20, 0, 20)) do
 	functions.Build("Wall", v)
 	functions.Build("Wall", v, 90)
 	functions.Build("Wall", v, 180)
