@@ -10,7 +10,10 @@ function functions.Grid(startPosition, x, y, z)
 	return positions
 end
 
-function functions.Build(ObjectType, Orientation, Coordinates)
+function functions.Build(ObjectType, Coordinates, Orientation)
+	if Orientation == nil then
+		Orientation = 0
+	end
 	game:GetService("ReplicatedStorage").BuildingSystem.Libraries.Grid.AddGridObject:FireServer(ObjectType.."$"..tostring(Orientation).."$0", Coordinates)
 end
 
