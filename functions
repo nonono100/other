@@ -1,0 +1,36 @@
+local functions = {}
+
+function functions.Grid(startPosition, x, y, z)
+	local positions = {}
+	for i = 1,(x / 1) do
+		for j = 1,(z / 1) do
+			table.insert(positions, startPosition + Vector3.new(i, y, j))
+		end
+	end
+	return positions
+end
+
+function functions.Build(ObjectType, Orientation, Coordinates)
+	game:GetService("ReplicatedStorage").BuildingSystem.Libraries.Grid.AddGridObject:FireServer(ObjectType.."$"..tostring(Orientation).."$0", Coordinates)
+end
+
+function functions.Destroy(Part)
+			local args = {
+				[1] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Crossbow"),
+				[2] = {
+					["p"] = Vector3.new(-25.773319244384766, 7.850815296173096, 42.5),
+					["pid"] = 1,
+					["part"] = Part,
+					["d"] = 25.67250633239746,
+					["maxDist"] = 25.614667892456055,
+					["h"] = Part,
+					["m"] = Enum.Material.Plastic,
+					["sid"] = 1,
+					["t"] = 0.7112177868872994,
+					["n"] = Vector3.new(0, 0, 1)
+				}
+			}
+			game:GetService("ReplicatedStorage").WeaponsSystem.Network.WeaponHit:FireServer(unpack(args))
+		end
+	
+return functions
