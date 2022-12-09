@@ -13,10 +13,10 @@ end
 function functions.buildEdges(startPosition, x, y, z)
 	local positions = {}
 
-	local c1 = Vector3.new(startPosition.X, y, startPosition.Z + 1)
+	local c1 = Vector3.new(startPosition.X, y, startPosition.Z - 1)
 	local c2 = Vector3.new(-startPosition.X, y, -startPosition.Z)
 	local c3 = Vector3.new(startPosition.X, y, startPosition.Z)
-	local c4 = Vector3.new(-(startPosition.X + 1), y, -startPosition.Z)
+	local c4 = Vector3.new(-(startPosition.X - 1), y, -startPosition.Z)
 	for i = 1,x do 
 		c1 += Vector3.new(1, 0, 0)
 		table.insert(positions, {c1, 180})
