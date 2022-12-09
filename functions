@@ -12,7 +12,7 @@ end
 
 function functions.buildEdges(startPosition, x, y, z, other)
 	local positions = {}
-if other then
+if other ~= nil then
     	local c1 = Vector3.new(startPosition.X, y, startPosition.Z)
 	local c2 = Vector3.new(-startPosition.X, y, -startPosition.Z)
 	local c3 = Vector3.new(startPosition.X, y, startPosition.Z)
