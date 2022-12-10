@@ -1,6 +1,6 @@
 local functions = {}
 
-function Grid(startPosition, x, y, z)
+function functions.Grid(startPosition, x, y, z)
 	local positions = {}
 	for a = 0, y do
 		for i = 0, x do
