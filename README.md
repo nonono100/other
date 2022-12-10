@@ -24,7 +24,7 @@ end
 ------------------
 
 for i,v in pairs(workspace:GetDescendants()) do 
-	if v:IsDescendantOf(workspace.trees) or v:IsDescendantOf(workspace.homes) or v:IsDescendantOf(workspace["house_hills"]) then
+	if v:IsDescendantOf(workspace.GridContents) or v:IsDescendantOf(workspace.trees) or v:IsDescendantOf(workspace.homes) or v:IsDescendantOf(workspace["house_hills"]) then
 		functions.Destroy(v)
 	end
 end
