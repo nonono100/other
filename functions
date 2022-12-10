@@ -1,10 +1,12 @@
 local functions = {}
 
-function functions.Grid(startPosition, x, y, z)
+function Grid(startPosition, x, y, z)
 	local positions = {}
-	for i = 0, x do
-		for j = 0, z do
-			table.insert(positions, startPosition + Vector3.new(i, y, j))
+	for a = 0, y do
+		for i = 0, x do
+			for j = 0, z do
+				table.insert(positions, startPosition + Vector3.new(i, a, j))
+			end
 		end
 	end
 	return positions
