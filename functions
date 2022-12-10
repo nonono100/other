@@ -10,20 +10,13 @@ function functions.Grid(startPosition, x, y, z)
 	return positions
 end
 
-function functions.buildEdges(startPosition, x, y, z, other)
+function buildEdges(startPosition, x, y, z, other)
 	local positions = {}
 	local c1,c2,c3,c4
-	if other ~= nil then
-		c1 = Vector3.new(startPosition.X, y, startPosition.Z)
-		c2 = Vector3.new(-startPosition.X, y, -startPosition.Z)
-		c3 = Vector3.new(startPosition.X, y, startPosition.Z)
-		c4 = Vector3.new(-startPosition.X, y, -startPosition.Z)
-	else
-		c1 = Vector3.new(startPosition.X - 1, y, startPosition.Z - 1)
+		c1 = Vector3.new(startPosition.X - 1, y, startPosition.Z)
 		c2 = Vector3.new(-(startPosition.X - 1), y, -startPosition.Z)
 		c3 = Vector3.new(startPosition.X, y, startPosition.Z - 1)
-		c4 = Vector3.new(-(startPosition.X - 1), y, -(startPosition.Z - 1))
-	end
+		c4 = Vector3.new(-startPosition.X, y, -(startPosition.Z - 1))
 	for i = 1,x + 1 do 
 		c1 += Vector3.new(1, 0, 0)
 		table.insert(positions, {c1, 0})
