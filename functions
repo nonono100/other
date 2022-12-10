@@ -13,21 +13,23 @@ end
 function functions.buildEdges(startPosition, x, y, z, other)
 	local positions = {}
 	local c1,c2,c3,c4
-		c1 = Vector3.new(startPosition.X - 1, y, startPosition.Z)
-		c2 = Vector3.new((startPosition.X + x + 1), y, startPosition.Z + x)
-		c3 = Vector3.new(startPosition.X, y, startPosition.Z - 1)
-		c4 = Vector3.new(startPosition.X + z, y, (startPosition.Z + z + 1))
-	for i = 1,x + 1 do 
-		c1 += Vector3.new(1, 0, 0)
-		table.insert(positions, {c1, 0})
-		c2 += Vector3.new(-1, 0, 0)
-		table.insert(positions, {c2, 180})
-	end
-	for i = 1,z + 1 do 
-		c3 += Vector3.new(0, 0, 1)
-		table.insert(positions, {c3, 90})
-		c4 += Vector3.new(0, 0, -1)
-		table.insert(positions, {c4, 270})
+	for b = 0,y do 
+		c1 = Vector3.new(startPosition.X - 1, startPosition.y + b, startPosition.Z)
+		c2 = Vector3.new((startPosition.X + x + 1), startPosition.y + b, startPosition.Z + x)
+		c3 = Vector3.new(startPosition.X, startPosition.y + b, startPosition.Z - 1)
+		c4 = Vector3.new(startPosition.X + z, startPosition.y + b, (startPosition.Z + z + 1))
+		for i = 1,x + 1 do 
+			c1 += Vector3.new(1, 0, 0)
+			table.insert(positions, {c1, 0})
+			c2 += Vector3.new(-1, 0, 0)
+			table.insert(positions, {c2, 180})
+		end
+		for i = 1,z + 1 do 
+			c3 += Vector3.new(0, 0, 1)
+			table.insert(positions, {c3, 90})
+			c4 += Vector3.new(0, 0, -1)
+			table.insert(positions, {c4, 270})
+		end
 	end
 	return positions
 end
