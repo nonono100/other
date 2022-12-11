@@ -65,10 +65,9 @@ end
 
 ```
 
-
 # EXAMPLES
 
-![Image](https://i.ibb.co/tKDwghP/Roblox-Screen-Shot20221211-013027067.png)
+![Image](https://i.ibb.co/9ym0z8j/maxresdefault.jpg)
 
 ```lua
 local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
