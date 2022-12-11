@@ -1,10 +1,7 @@
 https://www.roblox.com/games/8721702870/unnamed#!/
 
-## SCRIPT EXAMPLES
-
 # functions:
 
-###### ***Each function returns a table with coordinates and/or orientation (except build/destroy)***
 
 ```lua
 local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
