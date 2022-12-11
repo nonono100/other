@@ -64,3 +64,73 @@ for i,v in pairs(functions.buildCorners(Vector3.new(-20, 0, -20), 40, 19, 40)) d
 end
 
 ```
+
+
+# EXAMPLES
+
+![Image](https://i.ibb.co/tKDwghP/Roblox-Screen-Shot20221211-013027067.png)
+
+```lua
+local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
+
+
+for i,v in pairs(functions.buildEdges(Vector3.new(-10, 0, -10), 20, 10, 20)) do 
+	wait()
+	functions.Build("Wall", v[1], v[2])
+end
+
+for i,v in pairs(functions.buildEdges(Vector3.new(-11, 11, -11), 22, 0, 22)) do 
+	wait()
+	functions.Build("Floor", v[1], v[2])
+end
+
+function undoang(ang)
+	if ang == 180 then
+		return 0
+	end
+	if ang == 0 then
+		return 180 
+	end
+	if ang == 90 then
+		return 270 
+	end
+	if ang == 270 then
+		return 90
+	end
+end
+
+    local c = -11
+    local d = 22
+for i = 1,10 do 
+    c = c + 1
+    d = d - 2
+for i,v in pairs(functions.buildEdges(Vector3.new(c, -c, c), d, 0, d)) do 
+	wait()
+	functions.Build("Ramp", v[1], undoang(v[2]))
+end
+end
+
+    local a = -11
+    local b = 22
+for i = 1,10 do 
+    a = a + 1
+    b = b - 2
+for i,v in pairs(functions.buildCorners(Vector3.new(a, -a, a), b, 0, b)) do 
+	wait()
+	functions.Build("Wall", v, 0)
+	functions.Build("Wall", v, 90)
+	functions.Build("Wall", v, 180)
+	functions.Build("Wall", v, 270)
+	functions.Build("Floor", Vector3.new(v.X,v.Y + 1,v.Z), 0)
+end
+end
+
+for i,v in pairs(functions.buildEdges(Vector3.new(-12, 11, -12), 24, 0, 24)) do 
+	wait()
+	functions.Build("ShortWall", v[1], 270)
+		functions.Build("ShortWall", v[1], 180)
+			functions.Build("ShortWall", v[1], 0)
+		functions.Build("ShortWall", v[1], 90)
+end
+
+```
