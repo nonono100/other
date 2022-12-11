@@ -36,8 +36,21 @@ function functions.buildEdges(startPosition, x, y, z, other)
 	return positions
 end
 
-
-
+function functions.buildCorners(startPosition, x, y ,z)
+	local positions = {}
+	local c1,c2,c3,c4
+	for b = 0,y do 
+		c1 = Vector3.new(startPosition.X, startPosition.Y + b, startPosition.Z)
+		c2 = Vector3.new(startPosition.X + x, startPosition.Y + b, startPosition.Z + z)
+		c3 = Vector3.new(startPosition.X + x, startPosition.Y + b, startPosition.Z)
+		c4 = Vector3.new(startPosition.X, startPosition.Y + b, startPosition.Z + z)
+		table.insert(positions, c1)
+		table.insert(positions, c2)
+		table.insert(positions, c3)
+		table.insert(positions, c4)
+	end
+	return positions
+end
 
 function functions.Build(ObjectType, Coordinates, Orientation)
 	if Orientation == nil then
