@@ -68,7 +68,7 @@ end
 # EXAMPLES
 
 ![Image](https://i.ibb.co/9ym0z8j/maxresdefault.jpg)
-
+*INVERTED PYRAMID*
 ```lua
 local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
 
