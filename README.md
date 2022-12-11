@@ -1,7 +1,5 @@
 https://www.roblox.com/games/8721702870/unnamed#!/
 
-# functions:
-
 
 ```lua
 local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
