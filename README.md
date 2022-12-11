@@ -98,38 +98,38 @@ function undoang(ang)
 	end
 end
 
-    local c = -11
-    local d = 22
+local c = -11
+local d = 22
 for i = 1,10 do 
-    c = c + 1
-    d = d - 2
-for i,v in pairs(functions.buildEdges(Vector3.new(c, -c, c), d, 0, d)) do 
-	wait()
-	functions.Build("Ramp", v[1], undoang(v[2]))
-end
+	c = c + 1
+	d = d - 2
+	for i,v in pairs(functions.buildEdges(Vector3.new(c, -c, c), d, 0, d)) do 
+		wait()
+		functions.Build("Ramp", v[1], undoang(v[2]))
+	end
 end
 
-    local a = -11
-    local b = 22
+local a = -11
+local b = 22
 for i = 1,10 do 
-    a = a + 1
-    b = b - 2
-for i,v in pairs(functions.buildCorners(Vector3.new(a, -a, a), b, 0, b)) do 
-	wait()
-	functions.Build("Wall", v, 0)
-	functions.Build("Wall", v, 90)
-	functions.Build("Wall", v, 180)
-	functions.Build("Wall", v, 270)
-	functions.Build("Floor", Vector3.new(v.X,v.Y + 1,v.Z), 0)
-end
+	a = a + 1
+	b = b - 2
+	for i,v in pairs(functions.buildCorners(Vector3.new(a, -a, a), b, 0, b)) do 
+		wait()
+		functions.Build("Wall", v, 0)
+		functions.Build("Wall", v, 90)
+		functions.Build("Wall", v, 180)
+		functions.Build("Wall", v, 270)
+		functions.Build("Floor", Vector3.new(v.X,v.Y + 1,v.Z), 0)
+	end
 end
 
 for i,v in pairs(functions.buildEdges(Vector3.new(-12, 11, -12), 24, 0, 24)) do 
 	wait()
 	functions.Build("ShortWall", v[1], 270)
-		functions.Build("ShortWall", v[1], 180)
-			functions.Build("ShortWall", v[1], 0)
-		functions.Build("ShortWall", v[1], 90)
+	functions.Build("ShortWall", v[1], 180)
+	functions.Build("ShortWall", v[1], 0)
+	functions.Build("ShortWall", v[1], 90)
 end
 
 ```
