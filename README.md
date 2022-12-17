@@ -133,8 +133,8 @@ for i,v in pairs(functions.buildEdges(Vector3.new(-12, 11, -12), 24, 0, 24)) do
 end
 
 ```
-
-![Image](https://i.ibb.co/3T1WJ1s/Roblox-Screen-Shot20221216-210749727.png)
+---
+![Image](https://i.ibb.co/rZ44Bxt/maxresdefault.jpg)
 *DIAMOND*
 ```lua
 local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
