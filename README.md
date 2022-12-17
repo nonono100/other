@@ -133,3 +133,98 @@ for i,v in pairs(functions.buildEdges(Vector3.new(-12, 11, -12), 24, 0, 24)) do
 end
 
 ```
+
+![Image](https://i.ibb.co/3T1WJ1s/Roblox-Screen-Shot20221216-210749727.png)
+*DIAMOND*
+```lua
+local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
+
+
+for i,v in pairs(functions.buildCorners(Vector3.new(-10, 0, -10), 20, 10, 20)) do 
+	wait()
+	functions.Build("Wall", v, 0)
+	functions.Build("Wall", v, 90)
+	functions.Build("Wall", v, 180)
+	functions.Build("Wall", v, 270)
+end
+
+
+function undoang(ang)
+	if ang == 180 then
+		return 0
+	end
+	if ang == 0 then
+		return 180 
+	end
+	if ang == 90 then
+		return 270 
+	end
+	if ang == 270 then
+		return 90
+	end
+end
+
+local c = -11
+local d = 22
+for i = 1,10 do 
+	c = c + 1
+	d = d - 2
+	for i,v in pairs(functions.buildEdges(Vector3.new(c, -c, c), d, 0, d)) do 
+		wait()
+		functions.Build("Ramp", v[1], undoang(v[2]))
+	end
+end
+
+
+local a1 = -11
+local a3 = 10
+local a2 = 22
+for i = 1,10 do 
+	a1 = a1 + 1
+	a3 = a3 + 1
+	a2 = a2 - 2
+	for i,v in pairs(functions.buildEdges(Vector3.new(a1, a3, a1), a2, 0, a2)) do 
+		wait()
+		functions.Build("Ramp", v[1], v[2])
+	end
+end
+
+local a = -11
+local b = 22
+for i = 1,10 do 
+	a = a + 1
+	b = b - 2
+	for i,v in pairs(functions.buildCorners(Vector3.new(a, -a, a), b, 0, b)) do 
+		wait()
+		functions.Build("Wall", v, 0)
+		functions.Build("Wall", v, 90)
+		functions.Build("Wall", v, 180)
+		functions.Build("Wall", v, 270)
+		functions.Build("Floor", v, 0)
+		functions.Build("Floor", Vector3.new(v.X,v.Y + 1,v.Z), 0)
+	end
+end
+
+local b1 = -11
+local b3 = 10
+local b2 = 22
+for i = 1,10 do 
+	b1 = b1 + 1
+	b3 = b3 + 1
+	b2 = b2 - 2
+	for i,v in pairs(functions.buildCorners(Vector3.new(b1, b3, b1), b2, 0, b2)) do 
+		wait()
+		functions.Build("Wall", v, 0)
+		functions.Build("Wall", v, 90)
+		functions.Build("Wall", v, 180)
+		functions.Build("Wall", v, 270)
+		functions.Build("Floor", v, 0)
+		functions.Build("Floor", Vector3.new(v.X,v.Y + 1,v.Z), 0)
+	end
+end
+
+
+
+
+
+```
