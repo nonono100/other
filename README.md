@@ -228,3 +228,85 @@ end
 
 
 ```
+
+![Image](https://i.ibb.co/rZ44Bxt/maxresdefault.jpg)
+*CROSS*
+```lua
+local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
+
+
+local function reversetable(table1)
+    local tabl = {}
+    for i,v in pairs(table1) do 
+	table.insert(tabl, v)
+end
+return tabl
+end
+
+-- Center
+for i,v in pairs(functions.buildEdges(Vector3.new(-5, 0, -20), 3, 30, 3)) do 
+	wait()
+	functions.Build("Wall", v[1], v[2])
+end
+
+for i,v in pairs(functions.Grid(Vector3.new(-5, 31, -20), 3, 0, 3)) do 
+	wait()
+	functions.Build("Floor", v)
+end
+
+for i,v in pairs(functions.Grid(Vector3.new(-5, 2, -20), 3, 0, 3)) do 
+	wait()
+	functions.Build("Floor", v)
+end
+
+-- Left Side
+
+local tabl = reversetable(functions.Grid(Vector3.new(-12, 19, -20), 6, 0, 3))
+local inverse = #tabl
+for i = inverse, 1, -1 do 
+	wait()
+	functions.Build("Floor", tabl[i])
+end
+
+for i,v in pairs(functions.buildEdges(Vector3.new(-12, 19, -20), 3, 3, 3)) do 
+    	wait()
+    	functions.Build("Wall", v[1], v[2])
+end
+
+for i,v in pairs(functions.buildEdges(Vector3.new(-8, 19, -20), 3, 3, 3)) do 
+    	wait()
+    	functions.Build("Wall", v[1], v[2])
+    end
+
+for i,v in pairs(functions.Grid(Vector3.new(-12, 23, -20), 6, 0, 3)) do 
+    	wait()
+    	functions.Build("Floor", v)
+end
+
+-- Right Side
+
+for i,v in pairs(functions.Grid(Vector3.new(-1, 19, -20), 6, 0, 3)) do 
+    	wait()
+    	functions.Build("Floor", v)
+end
+
+for i,v in pairs(functions.Grid(Vector3.new(-1, 23, -20), 6, 0, 3)) do 
+    	wait()
+    	functions.Build("Floor", v)
+end
+
+for i,v in pairs(functions.buildEdges(Vector3.new(-1, 19, -20), 3, 3, 3)) do 
+    	wait()
+    	functions.Build("Wall", v[1], v[2])
+end
+
+for i,v in pairs(functions.buildEdges(Vector3.new(2, 19, -20), 3, 3, 3)) do 
+    	wait()
+    	functions.Build("Wall", v[1], v[2])
+end
+
+
+
+
+
+```
