@@ -229,7 +229,7 @@ end
 
 ```
 
-![Image](https://i.ibb.co/rZ44Bxt/maxresdefault.jpg)
+![Image](https://i.ibb.co/ZXgd400/maxresdefault.jpg)
 *CROSS*
 ```lua
 local functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/nonono100/other/main/functions"))();
