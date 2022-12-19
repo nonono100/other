@@ -228,7 +228,7 @@ end
 
 
 ```
-
+---
 ![Image](https://i.ibb.co/ZXgd400/maxresdefault.jpg)
 *CROSS*
 ```lua
